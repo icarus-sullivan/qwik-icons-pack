@@ -1,6 +1,8 @@
 {
   "name": "qwik-icons-pack",
   "version": "0.0.1",
+  "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",
+  "license": "MIT",
   "description": "A slim wrapper around numerous populare svg icons.",
   "files": [
     "lib",
@@ -39,14 +41,12 @@
     "eslint-plugin-qwik": "latest",
     "fs-extra": "^11.1.0",
     "glob": "^9.3.0",
+    "lodash.orderby": "^4.6.0",
     "np": "7.6.1",
     "pascalcase": "^2.0.0",
     "prettier": "2.8.4",
     "typescript": "5.0.2",
     "undici": "5.21.0",
     "vite": "4.2.0"
-  },
-  "dependencies": {
-    "lodash.orderby": "^4.6.0"
   }
 }
