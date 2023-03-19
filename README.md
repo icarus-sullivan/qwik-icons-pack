@@ -1,17 +1,17 @@
-# solidjs-icons
+# qwik-icons-pack
 A slim wrapper around numerous populare svg icons.
-View the [catalogue](https://icarus-sullivan.github.io/solidjs-icons/)
+View the [catalogue](https://icarus-sullivan.github.io/qwik-icons-pack/)
 
 ## Installation
 ```shell
-yarn add solidjs-icons
+yarn add qwik-icons-pack
 ```
 
 ## Usage
 Packs are split into separate paths. 
 
 ```javascript
-import { FiX } from 'solidjs-icons/fi';
+import { FiX } from 'qwik-icons-pack/fi';
 ```
 
 ## Packs
