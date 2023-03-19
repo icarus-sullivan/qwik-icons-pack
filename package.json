@@ -4,6 +4,16 @@
   "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",
   "license": "MIT",
   "description": "A slim wrapper around numerous populare svg icons.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icarus-sullivan/qwik-icons-pack.git"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "pack",
+    "qwik"
+  ],
   "files": [
     "lib",
     "lib-types"
