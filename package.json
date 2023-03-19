@@ -1,7 +1,7 @@
 {
   "name": "qwik-icons-pack",
   "version": "0.0.1",
-  "description": "Create a reusable Qwik component library",
+  "description": "A slim wrapper around numerous populare svg icons.",
   "files": [
     "lib",
     "lib-types"
