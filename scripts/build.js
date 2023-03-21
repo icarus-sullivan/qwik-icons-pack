@@ -14,6 +14,9 @@ import type { HTMLAttributes } from '@builder.io/qwik';
 export default component$((props: HTMLAttributes<unknown>) => (
   <svg {...props} {{svg_attrs}}>{{svg_contents}}</svg>
 ));`;
+const ICON_TEMPLATE_NEW = `export const {{name}} = component$((props: HTMLAttributes<unknown>) => (
+  <svg {...props} {{svg_attrs}}>{{svg_contents}}</svg>
+));`;
 const ICON_EXPORT_TEMPLATE = `export { default as {{name}} } from './{{name}}';`;
 const PACK_EXPORT_TEMPLATE = `export * from './{{id}}'`;
 
@@ -24,12 +27,13 @@ const processIcon = ({ iconDir, name, file }) => {
   // santizied
   const uncomment = svg_contents.replace(/<\!--.*?-->/gm, '')
 
-  const outputFile = path.resolve(iconDir, `${name}.tsx`);
-  const output = slim(ICON_TEMPLATE, { name, svg_attrs, svg_contents: uncomment });
+  // const outputFile = path.resolve(iconDir, `${name}.tsx`);
+  // const output = slim(ICON_TEMPLATE, { name, svg_attrs, svg_contents: uncomment });
 
-  fs.writeFileSync(outputFile, output, 'utf8');
+  // fs.writeFileSync(outputFile, output, 'utf8');
 
-  return slim(ICON_EXPORT_TEMPLATE, { name });
+  // return slim(ICON_EXPORT_TEMPLATE, { name });
+  return slim(ICON_TEMPLATE_NEW, { name, svg_attrs, svg_contents: uncomment })
 }
 
 const parseFile = ({ id, file, formatter }) => {
@@ -66,13 +70,19 @@ const processPackage = async (pkg) => {
     return it;
   });
 
-  const iconDir = path.resolve(BUILD_DIR, pkg.id);
-  fs.mkdirpSync(iconDir);
+  const prefix = `import { component$ } from '@builder.io/qwik';
+import type { HTMLAttributes } from '@builder.io/qwik';`
+  // const iconDir = path.resolve(BUILD_DIR, pkg.id);
+  // fs.mkdirpSync(iconDir);
 
-  const out = await Promise.all(deduplicatedFiles.map((it) => processIcon({ ...it, iconDir })));
+  const out = await Promise.all(deduplicatedFiles.map((it) => processIcon({ ...it, iconDir: BUILD_DIR })));
   
-  const outputFile = path.resolve(iconDir, `index.ts`);
-  const output = out.join('\n');
+  const outputFile = path.resolve(BUILD_DIR, `${pkg.id}.tsx`);
+  // const output = out.join('\n');
+
+  const output = `import { component$ } from '@builder.io/qwik';
+import type { HTMLAttributes } from '@builder.io/qwik';
+${out.join('\n')}`
   fs.writeFileSync(outputFile, output, 'utf8');
   return slim(PACK_EXPORT_TEMPLATE, pkg);
 }
@@ -84,6 +94,6 @@ const processPackage = async (pkg) => {
   }
 
   const out = await Promise.all(packages.map(processPackage));
-  const outputFile = path.resolve(BUILD_DIR, 'index.ts');
-  fs.writeFileSync(outputFile, out.join('\n'), 'utf8');
+  // const outputFile = path.resolve(BUILD_DIR, 'index.ts');
+  // fs.writeFileSync(outputFile, out.join('\n'), 'utf8');
 })();

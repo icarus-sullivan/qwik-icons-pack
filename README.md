@@ -1,6 +1,6 @@
 # qwik-icons-pack
 A slim wrapper around numerous populare svg icons.
-View the [catalogue](https://icarus-sullivan.github.io/qwik-icons-pack/)
+<!-- View the [catalogue](https://icarus-sullivan.github.io/qwik-icons-pack/) -->
 
 ## Installation
 ```shell

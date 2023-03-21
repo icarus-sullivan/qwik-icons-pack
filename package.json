@@ -8,20 +8,126 @@
     "type": "git",
     "url": "git+https://github.com/icarus-sullivan/qwik-icons-pack.git"
   },
+  "exports": {
+    "ai": {
+      "import": "./lib/ai.mjs",
+      "require": "./lib/ai.cjs",
+      "types": "./lib-types/ai.d.ts"
+    },
+    "wi": {
+      "import": "./lib/wi.mjs",
+      "require": "./lib/wi.cjs",
+      "types": "./lib-types/wi.d.ts"
+    },
+    "vsc": {
+      "import": "./lib/vsc.mjs",
+      "require": "./lib/vsc.cjs",
+      "types": "./lib-types/vsc.d.ts"
+    },
+    "ti": {
+      "import": "./lib/ti.mjs",
+      "require": "./lib/ti.cjs",
+      "types": "./lib-types/ti.d.ts"
+    },
+    "si": {
+      "import": "./lib/si.mjs",
+      "require": "./lib/si.cjs",
+      "types": "./lib-types/si.d.ts"
+    },
+    "ri": {
+      "import": "./lib/ri.mjs",
+      "require": "./lib/ri.cjs",
+      "types": "./lib-types/ri.d.ts"
+    },
+    "md": {
+      "import": "./lib/md.mjs",
+      "require": "./lib/md.cjs",
+      "types": "./lib-types/md.d.ts"
+    },
+    "io": {
+      "import": "./lib/io.mjs",
+      "require": "./lib/io.cjs",
+      "types": "./lib-types/io.d.ts"
+    },
+    "im": {
+      "import": "./lib/im.mjs",
+      "require": "./lib/im.cjs",
+      "types": "./lib-types/im.d.ts"
+    },
+    "hi": {
+      "import": "./lib/hi.mjs",
+      "require": "./lib/hi.cjs",
+      "types": "./lib-types/hi.d.ts"
+    },
+    "go": {
+      "import": "./lib/go.mjs",
+      "require": "./lib/go.cjs",
+      "types": "./lib-types/go.d.ts"
+    },
+    "gi": {
+      "import": "./lib/gi.mjs",
+      "require": "./lib/gi.cjs",
+      "types": "./lib-types/gi.d.ts"
+    },
+    "fi": {
+      "import": "./lib/fi.mjs",
+      "require": "./lib/fi.cjs",
+      "types": "./lib-types/fi.d.ts"
+    },
+    "fa": {
+      "import": "./lib/fa.mjs",
+      "require": "./lib/fa.cjs",
+      "types": "./lib-types/fa.d.ts"
+    },
+    "di": {
+      "import": "./lib/di.mjs",
+      "require": "./lib/di.cjs",
+      "types": "./lib-types/di.d.ts"
+    },
+    "cg": {
+      "import": "./lib/cg.mjs",
+      "require": "./lib/cg.cjs",
+      "types": "./lib-types/cg.d.ts"
+    },
+    "bx": {
+      "import": "./lib/bx.mjs",
+      "require": "./lib/bx.cjs",
+      "types": "./lib-types/bx.d.ts"
+    },
+    "bs": {
+      "import": "./lib/bs.mjs",
+      "require": "./lib/bs.cjs",
+      "types": "./lib-types/bs.d.ts"
+    }
+  },
   "keywords": [
     "icons",
     "svg",
     "pack",
-    "qwik"
+    "qwik",
+    "ant_design_icons",
+    "font_awesome",
+    "device_icons",
+    "game_icons",
+    "github_octicons",
+    "ionicons_5",
+    "bootstrap_icons",
+    "feather",
+    "material_design_icons",
+    "simple_icons",
+    "remix_icons",
+    "hero_icons",
+    "ico_moon",
+    "typeicons",
+    "box_icons",
+    "css_gg",
+    "vs_code_icons",
+    "weather_icons"
   ],
   "files": [
     "lib",
     "lib-types"
   ],
-  "engines": {
-    "node": ">=15.0.0"
-  },
-  "private": false,
   "type": "module",
   "scripts": {
     "build": "qwik build",
@@ -29,7 +135,6 @@
     "build.types": "tsc --emitDeclarationOnly",
     "build:docs": "node scripts/build_docs.js",
     "build:lib": "rm -rf build ; node ./scripts/build.js",
-    "dist": "npx babel build --out-dir dist && cp package.json dist && cp README.md dist",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
@@ -51,6 +156,7 @@
     "eslint-plugin-qwik": "latest",
     "fs-extra": "^11.1.0",
     "glob": "^9.3.0",
+    "lodash": "^4.17.21",
     "lodash.orderby": "^4.6.0",
     "np": "7.6.1",
     "pascalcase": "^2.0.0",

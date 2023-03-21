@@ -5,16 +5,14 @@ import fs from 'fs';
 import path from 'path';
 import { sync } from 'glob';
 
-const files = sync('build/**/*.ts')
+const files = sync('build/**/*.tsx')
 
 export default defineConfig(() => {
   return {
     build: {
       target: 'es2020',
       lib: {
-        entry: [
-          './build/index.ts'
-        ],
+        entry: files,
         formats: ['es', 'cjs'],
         fileName: (format, entry) => {
           console.log({format, entry});
