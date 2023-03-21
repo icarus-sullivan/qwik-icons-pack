@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { sync } from 'glob';
 
-const files = sync('build/**/*.tsx')
+const files = sync('src/lib/**/*.tsx')
 
 export default defineConfig(() => {
   return {
@@ -14,10 +14,7 @@ export default defineConfig(() => {
       lib: {
         entry: files,
         formats: ['es', 'cjs'],
-        fileName: (format, entry) => {
-          console.log({format, entry});
-          return `${entry}.${format === "es" ? "mjs" : "cjs"}`
-        },
+        fileName: (format, entry) => `${entry}.${format === "es" ? "mjs" : "cjs"}`,
       },
     },
     plugins: [qwikVite()],

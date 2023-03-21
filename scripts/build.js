@@ -94,6 +94,6 @@ ${out.join('\n')}`
   }
 
   const out = await Promise.all(packages.map(processPackage));
-  // const outputFile = path.resolve(BUILD_DIR, 'index.ts');
+  // const outputFile = path.resolve(BUILD_DIR, 'index.tsx');
   // fs.writeFileSync(outputFile, out.join('\n'), 'utf8');
 })();

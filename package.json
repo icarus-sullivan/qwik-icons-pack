@@ -1,6 +1,6 @@
 {
   "name": "qwik-icons-pack",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "author": "Chris Sullivan <chrissullivan.dev@gmail.com>",
   "license": "MIT",
   "description": "A slim wrapper around numerous populare svg icons.",
@@ -9,95 +9,100 @@
     "url": "git+https://github.com/icarus-sullivan/qwik-icons-pack.git"
   },
   "exports": {
-    "ai": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs",
+      "types": "./lib/index.d.ts"
+    },
+    "./ai": {
       "import": "./lib/ai.mjs",
       "require": "./lib/ai.cjs",
-      "types": "./lib-types/ai.d.ts"
+      "types": "./lib/ai.d.ts"
     },
-    "wi": {
+    "./wi": {
       "import": "./lib/wi.mjs",
       "require": "./lib/wi.cjs",
-      "types": "./lib-types/wi.d.ts"
+      "types": "./lib/wi.d.ts"
     },
-    "vsc": {
+    "./vsc": {
       "import": "./lib/vsc.mjs",
       "require": "./lib/vsc.cjs",
-      "types": "./lib-types/vsc.d.ts"
+      "types": "./lib/vsc.d.ts"
     },
-    "ti": {
+    "./ti": {
       "import": "./lib/ti.mjs",
       "require": "./lib/ti.cjs",
-      "types": "./lib-types/ti.d.ts"
+      "types": "./lib/ti.d.ts"
     },
-    "si": {
+    "./si": {
       "import": "./lib/si.mjs",
       "require": "./lib/si.cjs",
-      "types": "./lib-types/si.d.ts"
+      "types": "./lib/si.d.ts"
     },
-    "ri": {
+    "./ri": {
       "import": "./lib/ri.mjs",
       "require": "./lib/ri.cjs",
-      "types": "./lib-types/ri.d.ts"
+      "types": "./lib/ri.d.ts"
     },
-    "md": {
+    "./md": {
       "import": "./lib/md.mjs",
       "require": "./lib/md.cjs",
-      "types": "./lib-types/md.d.ts"
+      "types": "./lib/md.d.ts"
     },
-    "io": {
+    "./io": {
       "import": "./lib/io.mjs",
       "require": "./lib/io.cjs",
-      "types": "./lib-types/io.d.ts"
+      "types": "./lib/io.d.ts"
     },
-    "im": {
+    "./im": {
       "import": "./lib/im.mjs",
       "require": "./lib/im.cjs",
-      "types": "./lib-types/im.d.ts"
+      "types": "./lib/im.d.ts"
     },
-    "hi": {
+    "./hi": {
       "import": "./lib/hi.mjs",
       "require": "./lib/hi.cjs",
-      "types": "./lib-types/hi.d.ts"
+      "types": "./lib/hi.d.ts"
     },
-    "go": {
+    "./go": {
       "import": "./lib/go.mjs",
       "require": "./lib/go.cjs",
-      "types": "./lib-types/go.d.ts"
+      "types": "./lib/go.d.ts"
     },
-    "gi": {
+    "./gi": {
       "import": "./lib/gi.mjs",
       "require": "./lib/gi.cjs",
-      "types": "./lib-types/gi.d.ts"
+      "types": "./lib/gi.d.ts"
     },
-    "fi": {
+    "./fi": {
       "import": "./lib/fi.mjs",
       "require": "./lib/fi.cjs",
-      "types": "./lib-types/fi.d.ts"
+      "types": "./lib/fi.d.ts"
     },
-    "fa": {
+    "./fa": {
       "import": "./lib/fa.mjs",
       "require": "./lib/fa.cjs",
-      "types": "./lib-types/fa.d.ts"
+      "types": "./lib/fa.d.ts"
     },
-    "di": {
+    "./di": {
       "import": "./lib/di.mjs",
       "require": "./lib/di.cjs",
-      "types": "./lib-types/di.d.ts"
+      "types": "./lib/di.d.ts"
     },
-    "cg": {
+    "./cg": {
       "import": "./lib/cg.mjs",
       "require": "./lib/cg.cjs",
-      "types": "./lib-types/cg.d.ts"
+      "types": "./lib/cg.d.ts"
     },
-    "bx": {
+    "./bx": {
       "import": "./lib/bx.mjs",
       "require": "./lib/bx.cjs",
-      "types": "./lib-types/bx.d.ts"
+      "types": "./lib/bx.d.ts"
     },
-    "bs": {
+    "./bs": {
       "import": "./lib/bs.mjs",
       "require": "./lib/bs.cjs",
-      "types": "./lib-types/bs.d.ts"
+      "types": "./lib/bs.d.ts"
     }
   },
   "keywords": [
@@ -125,8 +130,7 @@
     "weather_icons"
   ],
   "files": [
-    "lib",
-    "lib-types"
+    "lib"
   ],
   "type": "module",
   "scripts": {
@@ -134,7 +138,7 @@
     "build.lib": "vite build --mode lib",
     "build.types": "tsc --emitDeclarationOnly",
     "build:docs": "node scripts/build_docs.js",
-    "build:lib": "rm -rf build ; node ./scripts/build.js",
+    "build:lib": "rm -rf src/lib/*.tsx ; node ./scripts/build.js",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",

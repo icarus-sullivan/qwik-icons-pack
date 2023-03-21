@@ -4,6 +4,7 @@
 /lib-types
 /server
 /build
+src/lib/*.tsx
 
 # Development
 node_modules

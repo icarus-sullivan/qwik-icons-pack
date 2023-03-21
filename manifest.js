@@ -1,5 +1,5 @@
 
-export const output = 'build';
+export const output = 'src/lib';
 
 export const packages = [
     {

@@ -8,14 +8,15 @@
     "jsxImportSource": "@builder.io/qwik",
     "strict": true,
     "declaration": true,
-    "declarationDir": "lib-types",
+    "declarationDir": "lib",
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "incremental": true,
+    "emitDeclarationOnly": true,
+    "incremental": false,
     "isolatedModules": true,
     "types": ["vite/client"]
   },
-  "include": ["build"]
+  "include": ["src/lib"]
 }
